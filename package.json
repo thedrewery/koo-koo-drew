@@ -1,0 +1,26 @@
+{
+  "name": "koo-koo-drew",
+  "version": "1.0.0",
+  "description": "Frontend of hot-chicken API designed by @thedrewery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedrewery/koo-koo-drew.git"
+  },
+  "author": "Drew Pomatti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thedrewery/koo-koo-drew/issues"
+  },
+  "homepage": "https://github.com/thedrewery/koo-koo-drew#readme",
+  "devDependencies": {
+    "parcel": "~2.8.3"
+  },
+  "dependencies": {
+    "react": "~18.2.0",
+    "react-dom": "~18.2.0"
+  }
+}
