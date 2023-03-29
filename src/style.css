@@ -27,6 +27,7 @@ body {
   width: 1100px;
   margin: 0 auto;
 }
+
 .user-login form,
 .user-signup form,
 .search-params form {
@@ -38,7 +39,6 @@ body {
   padding: 35px 15px 15px 15px;
   float: left;
 }
-
 
 .user-login input,
 .user-signup input,
