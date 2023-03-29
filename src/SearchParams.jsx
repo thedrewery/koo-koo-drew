@@ -14,7 +14,7 @@ const SearchParams = () => {
 
     async function requestReviews() {
         const res = await fetch(
-            `https://drewery-hot-chicken.onrender.com/api/review/public`
+            "https://drewery-hot-chicken.onrender.com/api/review/public"
         );
         const json = await res.json();
 
