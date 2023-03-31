@@ -1,16 +1,19 @@
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Login';
 import SearchParams from './SearchParams';
 import SignUp from './SignUp';
 
 const App = () => {
     return (
+        <BrowserRouter>
         <div>
             <h1>Koo Koo Drew!</h1>
             <Login />
             <SignUp />
             <SearchParams />
         </div>
+        </BrowserRouter>
     );
 };
 
