@@ -1,37 +1,30 @@
-import { useState, useEffect } from "react";
-import cookieParser from "cookie-parser";
+import { useState } from "react";
+//import { Router } from "react-router-dom";
+
+
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [jwt, setJwt] = useState("")
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("https://drewery-hot-chicken.onrender.com/signIn", {
+        const response = await fetch("https://drewery-hot-chicken.onrender.com/signin", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ username, password })
+            body: JSON.stringify({
+                username: username,
+                password: password
+            })
         });
         const data = await response.json();
-        setJwt(data.token);
+        console.log("this is the response data", data)
+        window.localStorage.setItem("token", data.token)
     };
 
-//   useEffect(() => {
-//         const csrfToken = cookieParser.parse(document.cookie).csrfToken;
-//         if (jwt) {
-//             fetch("/api/token", {
-//                 method: "POST",
-//                 headers: {
-//                     "Content-Type": "application/json",
-//                     "X-CSRF-Token": csrfToken,
-//                 },
-//                 body: JSON.stringify({ token: jwt }),
-//             });
-//         }
-//     }, [jwt]);
+
 
     return (
         <div className="user-login">
