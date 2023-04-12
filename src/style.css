@@ -1,4 +1,4 @@
-* {
+:root {
   box-sizing: border-box;
   color: #333;
   display: flex;
@@ -16,10 +16,9 @@ body {
 .user-signup h2,
 .user-login h2 {
   -webkit-text-fill-color: black;
-  -webkit-text-stroke: 1px ;
-  color: papayawhip
+  -webkit-text-stroke: 1px;
+  color: papayawhip;
 }
-
 
 .user-login,
 .user-signup,
@@ -76,4 +75,3 @@ body {
   float: left;
   margin-bottom: 25px;
 }
-
