@@ -7,7 +7,7 @@
 
 body {
   background-color: #81a69b;
-  background-image: url("../public/HotChickenWall.png");
+  background-image: url("/HotChickenWall.png");
   background-repeat: repeat;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
