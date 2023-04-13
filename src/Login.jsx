@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Link, redirect } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate()
     
     const loginSubmit = async (e) => {
         e.preventDefault();
@@ -21,10 +21,7 @@ const Login = () => {
         console.log("this is the response data", data)
         window.localStorage.setItem("token", data.token)
         window.localStorage.setItem("userId", data.userId)
-        if (data.token) {
-        return redirect("/reviews");
-        }
-        return console.log("you do not have a valid token");
+        navigate(`/reviews/${data.userId}`);
     };
 
     return (
