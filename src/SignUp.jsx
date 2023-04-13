@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link, redirect } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
     const [newUsername, setNewUsername] = useState("");
     const [email, setEmail] = useState("");
     const [newPassword, setNewPassword] = useState("");
+    const navigate = useNavigate() 
 
     const signupSubmit = async (e) => {
         e.preventDefault();
@@ -23,8 +24,7 @@ const SignUp = () => {
         console.log("this is the response data", data)
         window.localStorage.setItem("token", data.token)
         window.localStorage.setItem("userId", data.userId)
-            .then
-            if (data.token) return redirect(`/reviews/${data.userId}`)
+        navigate(`reviews/${data.userId}`)
     };
 
     
