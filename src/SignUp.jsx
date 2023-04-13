@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, redirect } from "react-router-dom";
 
 const SignUp = () => {
     const [newUsername, setNewUsername] = useState("");
@@ -21,12 +22,15 @@ const SignUp = () => {
         const data = await response.json();
         console.log("this is the response data", data)
         window.localStorage.setItem("token", data.token)
+        window.localStorage.setItem("userId", data.userId)
+            .then
+            if (data.token) return redirect(`/reviews/${data.userId}`)
     };
 
     
     return (
         <div className="user-signup">
-            <h2>New User? Sign Up!</h2>
+            <h2>Create A New User Profile</h2>
             <form onSubmit={signupSubmit}>
                 <label htmlFor="new-username">
                     New Username
@@ -58,6 +62,12 @@ const SignUp = () => {
                 </label>
                 <button>Submit</button>
             </form>
+            <div>
+                <h2>Already Have An Account?</h2>
+                <Link to="/">
+                <h2>Sign In</h2>
+                </Link>
+            </div>
         </div>
     )
 }
