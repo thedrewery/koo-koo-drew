@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-
-
+import { Link, redirect } from "react-router-dom";
 
 const Login = () => {
     const [username, setUsername] = useState("");
@@ -22,9 +20,12 @@ const Login = () => {
         const data = await response.json();
         console.log("this is the response data", data)
         window.localStorage.setItem("token", data.token)
+        window.localStorage.setItem("userId", data.userId)
+        if (data.token) {
+        return redirect("/reviews");
+        }
+        return console.log("you do not have a valid token");
     };
-
-
 
     return (
         <div className="user-login">
@@ -43,6 +44,7 @@ const Login = () => {
                     Password
                     <input
                         onChange={(e) => setPassword(e.target.value)}
+                        type="password"
                         id="password"
                         value={password}
                         placeholder="Password"
@@ -50,14 +52,14 @@ const Login = () => {
                 </label>
                 <button>Submit</button>
             </form>
+            
             <div>
-            <span>
             <h2>New User?</h2>
             <Link to={"/signup"}>
                 <h2>Sign Up!</h2>
                 </Link>
-                </span>
-            </div>
+                </div>
+                
         </div>
     )
 }
