@@ -12,13 +12,19 @@ const SearchParams = () => {
         requestReviews();
     }, []);
 
-    async function requestReviews() {
-        const res = await fetch(
-            "https://drewery-hot-chicken.onrender.com/api/review/public"
-        );
-        const json = await res.json();
-
-        setReviews(json.reviews);
+    const requestReviews = async () => {
+        const token = localStorage.getItem('token');
+        const response = await fetch(
+            "https://drewery-hot-chicken.onrender.com/api/review/public", {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
+            }
+        });
+        const data = await response.json();
+        console.log(data)
+        setReviews(data.reviews);
     }
 
     return (
