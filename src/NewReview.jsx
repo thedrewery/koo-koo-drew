@@ -8,6 +8,7 @@ const NewReview = () => {
     const [description, setDescription] = useState("")
     const [body, setBody] = useState("")
     const [rating, setRating] = useState("")
+    const [dbRating, setDbRating] = useState("")
     const [publicReview, setPublicReview] = useState("")
 
     const createNewReview = async (e) => {
@@ -26,7 +27,7 @@ const NewReview = () => {
                     address: address,
                     description: description,
                     body: body,
-                    rating: rating,
+                    rating: dbRating,
                     public: JSON.parse(publicReview),
                     reviewedById: userId
                 })
@@ -37,7 +38,7 @@ const NewReview = () => {
     }
 
     return (
-        <div>
+        <div className="new-review">
             <h2>Write A New Review:</h2>
             <form onSubmit={createNewReview}>
                 <label htmlFor="establishment">
@@ -81,19 +82,24 @@ const NewReview = () => {
                     <select
                         onChange={(e) => {
                             if (e.target.value === "🐔") {
-                                setRating("CHICKEN")
+                                setRating(e.target.value)
+                                setDbRating("CHICKEN")
                             }
                             if (e.target.value === "🐔🐔") {
-                                setRating("CHICKEN_CHICKEN")
+                                setRating(e.target.value)
+                                setDbRating("CHICKEN_CHICKEN")
                             }
                             if (e.target.value === "🐔🐔🐔") {
-                                setRating("CHICKEN_CHICKEN_CHICKEN")
+                                setRating(e.target.value)
+                                setDbRating("CHICKEN_CHICKEN_CHICKEN")
                             }
                             if (e.target.value === "🐔🐔🐔🐔") {
-                                setRating("CHICKEN_CHICKEN_CHICKEN_CHICKEN")
+                                setRating(e.target.value)
+                                setDbRating("CHICKEN_CHICKEN_CHICKEN_CHICKEN")
                             }
                             if (e.target.value === "🐔🐔🐔🐔🐔") {
-                                setRating("CHICKEN_CHICKEN_CHICKEN_CHICKEN_CHICKEN")
+                                setRating(e.target.value)
+                                setDbRating("CHICKEN_CHICKEN_CHICKEN_CHICKEN_CHICKEN")
                             }
                         }}
                         id="rating"
