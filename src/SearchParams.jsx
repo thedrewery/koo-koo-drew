@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Results from "./Results";
+//import ReviewsDisplay from "./ReviewsDisplay";
 const RATINGS = ["🐔", "🐔🐔", "🐔🐔🐔", "🐔🐔🐔🐔", "🐔🐔🐔🐔🐔"]
 
 const SearchParams = () => {
