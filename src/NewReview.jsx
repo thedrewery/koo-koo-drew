@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const RATINGS = ["🐔", "🐔🐔", "🐔🐔🐔", "🐔🐔🐔🐔", "🐔🐔🐔🐔🐔"]
+const PUBLIC = ["true", "false"]
 
 const NewReview = () => {
     const [establishment, setEstablishment] = useState("")
@@ -34,7 +35,6 @@ const NewReview = () => {
         });
         const data = await response.json();
         console.log(data)
-        console.log("this is the public review value", publicReview)
     }
 
     return (
@@ -42,7 +42,7 @@ const NewReview = () => {
             <h2>Write A New Review:</h2>
             <form onSubmit={createNewReview}>
                 <label htmlFor="establishment">
-                    Restaurant
+                    Restaurant:
                     <input
                         onChange={(e) => setEstablishment(e.target.value)}
                         id="establishment"
@@ -51,7 +51,7 @@ const NewReview = () => {
                     />
                 </label>
                 <label htmlFor="address">
-                    Address
+                    Address:
                     <input
                         onChange={(e) => setAddress(e.target.value)}
                         id="address"
@@ -60,25 +60,33 @@ const NewReview = () => {
                     />
                 </label>
                 <label htmlFor="description">
-                    Restaurant Description
+                    Restaurant Description:
+                    <div>
                     <textarea
                         onChange={(e) => setDescription(e.target.value)}
                         id="description"
                         value={description}
                         placeholder="Description"
+                        rows="2"
+                        cols="40"
                     />
+                    </div>
                 </label>
                 <label htmlFor="body">
-                    Review
+                    Your Review:
+                    <div>
                     <textarea
                         onChange={(e) => setBody(e.target.value)}
                         id="body"
                         value={body}
                         placeholder="Review"
+                        rows="7"
+                        cols="40"
                     />
+                    </div>
                 </label>
                 <label htmlFor="rating">
-                    Rating
+                    Your Rating:
                     <select
                         onChange={(e) => {
                             if (e.target.value === "🐔") {
@@ -112,14 +120,21 @@ const NewReview = () => {
                     </select>
                 </label>
                 <label htmlFor="public-review">
-                    Public?
+                    Want To Make Your Review Public?
                     <select
-                        onChange={(e) => setPublicReview(e.target.value)}
+                        onChange={(e) => {
+                            if (e.target.value === "true")
+                                setPublicReview(e.target.value)
+                            if (e.target.value === "false")
+                                setPublicReview(e.target.value)
+                        }}
                         id="public-review"
                         value={publicReview.toString()}
                     >
-                        <option value="true" key="true">true</option>
-                        <option value="false" key="false">false</option>
+                        <option />
+                            {PUBLIC.map((pub) => (
+                                <option key={pub}>{pub}</option>
+                            ))}
                     </select>
                 </label>
                 <button>Submit</button>

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import NewReview from "./NewReview";
 import SignUp from "./SignUp";
-import Results from "./Results";
+import ReviewsDisplay from "./ReviewsDisplay"
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
             element={
               <>
                 <NewReview />
-                <Results />
+                <ReviewsDisplay />
               </>
             }
           />
