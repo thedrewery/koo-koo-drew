@@ -30,7 +30,7 @@ const NewReview = () => {
                     body: body,
                     rating: dbRating,
                     public: JSON.parse(publicReview),
-                    reviewedById: userId
+                    reviewedById: userId,
                 })
         });
         const data = await response.json();
