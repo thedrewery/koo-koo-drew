@@ -80,3 +80,13 @@ body {
   margin-bottom: 25px;
 }
 
+.chicken-review {
+  border: 1px dashed #000000;
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.chicken-review cr-header {
+  display: flex;
+  
+}
