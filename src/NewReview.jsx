@@ -33,8 +33,7 @@ const NewReview = () => {
                     reviewedById: userId,
                 })
         });
-        const data = await response.json();
-        console.log(data)
+        await response.json();
     }
 
     return (

@@ -19,7 +19,6 @@ const Login = () => {
             })
         });
         const data = await response.json();
-        console.log("this is the response data", data)
         window.localStorage.setItem("token", data.token)
         window.localStorage.setItem("userId", data.userId)
         window.localStorage.setItem("username", data.username)
