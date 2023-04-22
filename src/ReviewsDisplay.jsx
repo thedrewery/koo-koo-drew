@@ -59,6 +59,7 @@ const ReviewsDisplay = () => {
             ) : (
                     combinedReviews.map(review => (
                         <Review
+                            id={review.id}
                             establishment={review.establishment}
                             address={review.address}
                             description={review.description}
