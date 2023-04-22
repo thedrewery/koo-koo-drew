@@ -1,10 +1,11 @@
 const Review = (props) => {
     const { id, createdAt, establishment, address, description, body, rating, reviewer } = props
 
-        const deleteReview = async () => {
+    const userId = localStorage.getItem('userId')
 
+        const deleteReview = async () => {
         const token = localStorage.getItem('token')
-        const response = await fetch(`https://drewery-hot-chicken.onrender.com/api/review/${id}`, {
+        await fetch(`https://drewery-hot-chicken.onrender.com/api/review/${id}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -36,7 +37,14 @@ const Review = (props) => {
                 <h4>{createdAt}</h4>
             </div>
             {/* </div><h5>{comments}</h5> */}
-            <button onClick={deleteReview}>Delete</button>
+            <div>
+            {(reviewer === userId) ? (
+                <button onClick={deleteReview}>Delete</button>
+                ) : (
+                <button hidden onClick={deleteReview}>Delete</button>
+                )
+            }
+            </div>
         </div>
     )
 }
