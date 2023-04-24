@@ -40,8 +40,8 @@ const NewReview = () => {
 
     return (
         <div className="new-review">
-            <h2>Write A New Review:</h2>
             <form onSubmit={createNewReview}>
+                <h1>Write A New Review</h1>
                 <label htmlFor="establishment">
                     Restaurant:
                     <input

@@ -27,8 +27,8 @@ const Login = () => {
 
     return (
         <div className="user-login">
-            <h2>Already Have an Account? Sign In!</h2>
             <form onSubmit={loginSubmit}>
+                <h2>Already Have an Account? Sign In!</h2>
                 <label htmlFor="username">
                     Username
                     <input
@@ -49,15 +49,13 @@ const Login = () => {
                     />
                 </label>
                 <button>Submit</button>
-            </form>
-            
-            <div>
-            <h2>New User?</h2>
-            <Link to={"/signup"}>
-                <h2>Sign Up!</h2>
-                </Link>
+                <div className="login-footer" style={{justifyContent: "center"}}>
+                    <h2>New User?&nbsp;&nbsp;</h2>
+                    <Link to={"/signup"}>
+                        <h2>Sign Up!</h2>
+                    </Link>
                 </div>
-                
+            </form>
         </div>
     )
 }
