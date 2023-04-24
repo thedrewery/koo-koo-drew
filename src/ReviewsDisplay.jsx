@@ -46,7 +46,10 @@ const ReviewsDisplay = () => {
             const uniqueReviews = Array.from(mergeSet).map((id) => {
                 return mergeArr.find((review) => review.id === id);
             });
-            setCombinedReviews(uniqueReviews);
+            const sortedReviews = uniqueReviews.sort((a, b) => {
+                return new Date(b.createdAt) - new Date(a.createdAt);
+            });
+            setCombinedReviews(sortedReviews);
         };
         mergeAndFilterReviews();
     }, [userReviews, publicReviews]);
