@@ -3,7 +3,7 @@ const Review = (props) => {
 
     const userId = localStorage.getItem('userId')
 
-        const deleteReview = async () => {
+    const deleteReview = async () => {
         const token = localStorage.getItem('token')
         await fetch(`https://drewery-hot-chicken.onrender.com/api/review/${id}`, {
             method: "DELETE",
@@ -38,12 +38,15 @@ const Review = (props) => {
             </div>
             {/* </div><h5>{comments}</h5> */}
             <div>
-            {(reviewer === userId) ? (
+                {(reviewer === userId) ? (
+                <div>
                 <button onClick={deleteReview}>Delete</button>
+                <button>Edit</button>
+                </div>
                 ) : (
                 <button hidden onClick={deleteReview}>Delete</button>
                 )
-            }
+                }
             </div>
         </div>
     )

@@ -16,6 +16,8 @@ const NewReview = () => {
         e.preventDefault();
         const token = localStorage.getItem('token');
         const userId = localStorage.getItem('userId')
+        // const username = localStorage.getItem('username')
+
         const response = await fetch(
             "https://drewery-hot-chicken.onrender.com/api/review", {
                 method: "POST",
@@ -30,7 +32,7 @@ const NewReview = () => {
                     body: body,
                     rating: dbRating,
                     public: JSON.parse(publicReview),
-                    reviewedById: userId,
+                    reviewedById: userId
                 })
         });
         await response.json();
