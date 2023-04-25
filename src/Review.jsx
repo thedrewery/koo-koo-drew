@@ -31,7 +31,7 @@ const Review = (props) => {
                 <h3>{body}</h3>
             </div>
             <div>
-                <h4>{reviewer}</h4>
+                <h4 hidden>{reviewer}</h4>
             </div>
             <div>
                 <h4>{createdAt}</h4>
@@ -41,7 +41,7 @@ const Review = (props) => {
                 {(reviewer === userId) ? (
                 <div>
                 <button onClick={deleteReview}>Delete</button>
-                <button>Edit</button>
+                <button hidden>Edit</button>
                 </div>
                 ) : (
                 <button hidden onClick={deleteReview}>Delete</button>
