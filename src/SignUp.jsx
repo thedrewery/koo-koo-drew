@@ -24,14 +24,19 @@ const SignUp = () => {
         console.log("this is the response data", data)
         window.localStorage.setItem("token", data.token)
         window.localStorage.setItem("userId", data.userId)
+<<<<<<< HEAD
         navigate(`../reviews/${data.userId}`)
+=======
+        window.localStorage.setIteam("username", data.username)
+        navigate(`reviews/${data.userId}`)
+>>>>>>> main
     };
 
     
     return (
         <div className="user-signup">
-            <h2>Create A New User Profile</h2>
             <form onSubmit={signupSubmit}>
+                <h2>Create A New User Profile</h2>
                 <label htmlFor="new-username">
                     New Username
                     <input
@@ -61,13 +66,13 @@ const SignUp = () => {
                     />
                 </label>
                 <button>Submit</button>
+                <div className="signup-footer">
+                    <h3>Already Have An Account?</h3>
+                    <Link to="/">
+                        <h3>Sign In</h3>
+                    </Link>
+                </div>
             </form>
-            <div>
-                <h2>Already Have An Account?</h2>
-                <Link to="/">
-                <h2>Sign In</h2>
-                </Link>
-            </div>
         </div>
     )
 }

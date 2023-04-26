@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
 :root {
   box-sizing: border-box;
   color: #333;
@@ -5,19 +17,36 @@
   flex-direction: column;
 }
 
+
+
 body {
-  background-color: #81a69b;
+  background-color: whitesmoke;
   background-image: url("/HotChickenWall.png");
   background-repeat: repeat;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+}
+
+.title {
+  animation: slide-in 1s ease-out;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  font-family: 'Luckiest Guy', cursive;
+  display: flex;
+  font-size: 50px;
+  color: rgb(255, 96, 48);
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .user-signup h2,
 .user-login h2 {
   -webkit-text-fill-color: black;
-  -webkit-text-stroke: 1px;
   color: papayawhip;
+}
+
+.new-review h1 {
+  font-style: bold;
 }
 
 .user-login,
@@ -29,20 +58,23 @@ body {
 
 .user-login form,
 .user-signup form,
-.search-params form {
+.search-params form,
+.new-review form {
   border-radius: 6px;
-  background: #faeff0;
+  background: #faeff0cc;
   box-shadow: 0px 0px 12px #aaa, -0px -0px 12px #fff;
   width: 360px;
   margin: 0px 25px 0px 0px;
-  padding: 35px 15px 15px 15px;
+  padding: 15px 15px 15px 15px;
   float: left;
 }
 
 .user-login input,
 .user-signup input,
 .search-params input,
-.search-params select {
+.search-params select,
+.new-review select,
+.new-review input {
   margin-bottom: 30px;
   font-size: 18px;
   height: 30px;
@@ -54,7 +86,8 @@ body {
 .user-signup button,
 #modal button,
 #modal a,
-.details button {
+.details button,
+.new-review button {
   background-color: #783036;
   padding: 5px 25px;
   color: white;
@@ -66,12 +99,36 @@ body {
   cursor: pointer;
 }
 
-.search {
+.login-footer,
+.signup-footer {
+  display: flex;
+  align-items: center;
+}
+
+.login-footer h3,
+.signup-footer h3 {
+  margin-right: 1rem;
+  color: black;
+}
+
+.review-board {
   border-radius: 6px;
-  background: #faeff0;
+  background: #faeff0d9;
   box-shadow: 0px 0px 12px #aaa, -0px -0px 12px #fff;
   width: 715px;
   padding: 15px;
   float: left;
   margin-bottom: 25px;
+}
+
+.chicken-review {
+  border: 1px dashed #000000;
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.cr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

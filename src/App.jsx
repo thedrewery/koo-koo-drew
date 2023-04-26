@@ -1,14 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Login";
-import SearchParams from "./SearchParams";
+import NewReview from "./NewReview";
 import SignUp from "./SignUp";
-import Results from "./Results";
+import ReviewsDisplay from "./ReviewsDisplay"
+
 
 const App = () => {
+
   return (
     <BrowserRouter>
       <div>
-        <h1>Koo Koo Drew!</h1>
+        <div className="title">
+          <h1>Koo K🐔o Drew!</h1>
+        </div>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
@@ -16,8 +20,8 @@ const App = () => {
             path="/reviews/:id"
             element={
               <>
-                <SearchParams />
-                <Results />
+                <NewReview />
+                <ReviewsDisplay />
               </>
             }
           />
