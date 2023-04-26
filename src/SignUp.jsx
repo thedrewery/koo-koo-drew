@@ -24,8 +24,12 @@ const SignUp = () => {
         console.log("this is the response data", data)
         window.localStorage.setItem("token", data.token)
         window.localStorage.setItem("userId", data.userId)
+<<<<<<< HEAD
+        navigate(`../reviews/${data.userId}`)
+=======
         window.localStorage.setIteam("username", data.username)
         navigate(`reviews/${data.userId}`)
+>>>>>>> main
     };
 
     
