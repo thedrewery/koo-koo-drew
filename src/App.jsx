@@ -1,9 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Login";
-import NewReview from "./NewReview";
 import SignUp from "./SignUp";
-import ReviewsDisplay from "./ReviewsDisplay"
-
+import ReviewsPage from "./ReviewsPage";
 
 const App = () => {
 
@@ -20,8 +18,7 @@ const App = () => {
             path="/reviews/:id"
             element={
               <>
-                <NewReview />
-                <ReviewsDisplay />
+                <ReviewsPage />
               </>
             }
           />
