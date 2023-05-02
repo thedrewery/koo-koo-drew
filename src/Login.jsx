@@ -1,10 +1,22 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { login } from "./utils";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate()
+    const { body } = useParams();
+    const userLogin = useQuery(["body", body], login)
+
+    if (userLogin.isLoading) {
+        return (
+            <div className="loading-pane">
+                <h2 className="loader">🌀</h2>
+            </div>
+        )
+    }
     
     const loginSubmit = async (e) => {
         e.preventDefault();
