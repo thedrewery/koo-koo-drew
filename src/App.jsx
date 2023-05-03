@@ -13,6 +13,9 @@ const App = () => {
         <div className="title">
           <h1>Koo K🐔o Drew!</h1>
         </div>
+        <div className="desc">
+          <h3>A Review Board For Nashville Hot Chicken Lovers</h3>
+        </div>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
