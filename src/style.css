@@ -37,6 +37,18 @@ body {
   color: rgb(255, 96, 48);
   padding-left: 1em;
   padding-right: 1em;
+  line-height: 0em;
+}
+
+.desc {
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  font-family: 'Luckiest Guy', cursive;
+  display: flex;
+  font-size: 30px;
+  color: rgb(11, 11, 11);
+  padding-left: 1em;
+  padding-right: 1em;
+  line-height: 0em;
 }
 
 @media only screen and (max-width: 375px) {
