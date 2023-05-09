@@ -36,6 +36,7 @@ const NewReview = () => {
                 })
         });
         await response.json();
+        window.location.reload()
     }
 
     return (

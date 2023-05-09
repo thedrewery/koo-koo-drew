@@ -1,6 +1,5 @@
 const Review = (props) => {
     const { id, createdAt, establishment, address, description, body, rating, reviewer } = props
-
     const userId = localStorage.getItem('userId')
 
     const deleteReview = async () => {
@@ -12,6 +11,7 @@ const Review = (props) => {
                 "Content-Type": "application/json"
             }
         });
+        window.location.reload()
     }
 
 
