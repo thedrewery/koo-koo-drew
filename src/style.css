@@ -147,13 +147,13 @@ body {
 
 .loading-pane {
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   display: flex;
-  padding: 15px;
+  padding: 10px;
 }
 
 .loader {
-  font-size: 100px;
+  font-size: 50px;
   animation: spin 1s linear infinite;
 }
 
