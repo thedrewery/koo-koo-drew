@@ -14,7 +14,7 @@ const App = () => {
           <h1>Koo K🐔o Drew!</h1>
         </div>
         <div className="desc">
-          <h3>A Review Board For Nashville Hot Chicken Lovers</h3>
+          <p>A Review Board For Nashville Hot Chicken Lovers</p>
         </div>
         <Routes>
           <Route path="/" element={<Login />} />
