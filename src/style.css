@@ -144,3 +144,21 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+.loading-pane {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 15px;
+}
+
+.loader {
+  font-size: 100px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -58,7 +58,9 @@ const ReviewsDisplay = () => {
     return (
         <div className="review-board">
             {(!combinedReviews) ? (
-                <h1>No Reviews Found</h1>
+                <div> 
+                    <h1>No Reviews Found</h1>
+                </div>
             ) : (
                     combinedReviews.map(review => (
                         <Review
