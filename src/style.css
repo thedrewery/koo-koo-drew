@@ -160,7 +160,7 @@ body {
 
 .loader {
   font-size: 50px;
-  animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite reverse;
 }
 
 @keyframes spin {
