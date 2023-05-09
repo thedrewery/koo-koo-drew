@@ -37,7 +37,7 @@ body {
   color: rgb(255, 96, 48);
   padding-left: 1em;
   padding-right: 1em;
-  line-height: 0em;
+  line-height: 2em;
 }
 
 .desc {
@@ -48,7 +48,7 @@ body {
   color: rgb(11, 11, 11);
   padding-left: 1em;
   padding-right: 1em;
-  line-height: 0em;
+  line-height: 2em;
 }
 
 @media only screen and (max-width: 375px) {
