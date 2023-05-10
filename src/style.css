@@ -79,6 +79,8 @@ body {
   margin: 0px 25px 0px 0px;
   padding: 15px 15px 15px 15px;
   float: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .user-login input,
@@ -136,7 +138,19 @@ body {
 .chicken-review {
   border: 1px dashed #000000;
   border-radius: 6px;
-  padding: 5px;
+  padding: 10px;
+}
+
+.new-review .public-review {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  margin-top: 5px;
+}
+
+.new-review .public-review p {
+  margin-right: 75px;
+  justify-content: space-between;
 }
 
 .cr-header {
