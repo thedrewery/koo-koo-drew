@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const RATINGS = ["🐔", "🐔🐔", "🐔🐔🐔", "🐔🐔🐔🐔", "🐔🐔🐔🐔🐔"]
-const PUBLIC = ["true", "false"]
 
 const NewReview = () => {
     const [establishment, setEstablishment] = useState("")
@@ -31,7 +30,7 @@ const NewReview = () => {
                     description: description,
                     body: body,
                     rating: dbRating,
-                    public: JSON.parse(publicReview),
+                    public: publicReview,
                     reviewedById: userId
                 })
         });
@@ -123,21 +122,20 @@ const NewReview = () => {
                 </label>
                 <label htmlFor="public-review">
                     Want To Make Your Review Public?
-                    <select
-                        onChange={(e) => {
-                            if (e.target.value === "true")
-                                setPublicReview(e.target.value)
-                            if (e.target.value === "false")
-                                setPublicReview(e.target.value)
-                        }}
-                        id="public-review"
-                        value={publicReview.toString()}
-                    >
-                        <option />
-                            {PUBLIC.map((pub) => (
-                                <option key={pub}>{pub}</option>
-                            ))}
-                    </select>
+                    <div className="public-review">
+                        <input
+                            type="checkbox"
+                            onChange={() => setPublicReview(true)}
+                            checked={publicReview}
+                        />
+                        <p>Yes</p>
+                        <input
+                            type="checkbox"
+                            onChange={() => setPublicReview(false)}
+                            checked={!publicReview}
+                        />
+                        <p>No</p>
+                    </div>
                 </label>
                 <button>Submit</button>
             </form>
