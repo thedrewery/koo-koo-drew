@@ -1,4 +1,9 @@
+import EditReviewModal from "./EditReviewModal";
+import NewReview from "./NewReview";
+import { useState } from "react";
+ 
 const Review = (props) => {
+    //const [showReviewModal, setShowReviewModal] = useState(false);
     const { id, createdAt, establishment, address, description, body, rating, reviewer } = props
     const userId = localStorage.getItem('userId')
 
@@ -14,6 +19,11 @@ const Review = (props) => {
         window.location.reload()
     }
 
+    const editReview = async () => {
+        
+
+        console.log(props.id, "editReview button clicked" )
+    }
 
     return (
         <div className="chicken-review">
@@ -40,8 +50,8 @@ const Review = (props) => {
             <div>
                 {(reviewer === userId) ? (
                 <div>
-                <button onClick={deleteReview}>Delete</button>
-                <button hidden>Edit</button>
+                    <button onClick={editReview}>Edit</button>
+                    <button onClick={deleteReview}>Delete</button>
                 </div>
                 ) : (
                 <button hidden onClick={deleteReview}>Delete</button>
