@@ -1,9 +1,9 @@
-import EditReviewModal from "./EditReviewModal";
-import NewReview from "./NewReview";
+import EditReview from "./EditReview";
 import { useState } from "react";
- 
+
+
 const Review = (props) => {
-    //const [showReviewModal, setShowReviewModal] = useState(false);
+    const [showEditReview, setShowEditReview] = useState(false);
     const { id, createdAt, establishment, address, description, body, rating, reviewer } = props
     const userId = localStorage.getItem('userId')
 
@@ -14,19 +14,27 @@ const Review = (props) => {
             headers: {
                 "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json"
-            }
+            } 
         });
         window.location.reload()
     }
 
     const editReview = async () => {
-        
-
-        console.log(props.id, "editReview button clicked" )
+        setShowEditReview(true)
+        window.localStorage.setItem("editReviewId", props.id)
+        console.log(props.id, "editReview button clicked")
     }
 
     return (
         <div className="chicken-review">
+             {
+                showEditReview ? 
+                    (
+                    <div>
+                        <EditReview />
+                    </div>
+                ) : null
+            }
             <div className="cr-header">
                 <h1>{establishment}</h1>
                 <h2>Rating:{rating}</h2>
