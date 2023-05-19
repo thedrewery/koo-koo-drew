@@ -146,7 +146,6 @@ const EditReview = () => {
                 </label>
                 <div className="edit-review">
                     <button >Save</button>
-                    <button onClick={() => window.location.reload()}>Cancel</button>
                 </div>
             </form>
         </div>

@@ -33,10 +33,11 @@ const Review = (props) => {
              {
                 showEditReview ? 
                     (
-                    <div>
-                        <EditReview />
-                    </div>
-                ) : null
+                        <div>   
+                            <EditReview />
+                            <button onClick={() => setShowEditReview(false)}>Cancel Edit Review</button>
+                        </div>
+                    ) : null
             }
             <div className="cr-header">
                 <h1>{establishment}</h1>
@@ -64,9 +65,7 @@ const Review = (props) => {
                     <button onClick={editReview}>Edit</button>
                     <button onClick={deleteReview}>Delete</button>
                 </div>
-                ) : (
-                <button hidden onClick={deleteReview}>Delete</button>
-                )
+                ) : null
                 }
             </div>
         </div>
