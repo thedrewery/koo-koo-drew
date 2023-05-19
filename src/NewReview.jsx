@@ -35,11 +35,7 @@ const NewReview = () => {
                 })
         });
         await response.json();
-        if (process.env.NODE_ENV === 'production') {
-            window.location.reload(window.location.href)
-        } else {
-            window.location.reload(window.location.href);
-        }
+        window.location.reload();
     }
 
     return (
