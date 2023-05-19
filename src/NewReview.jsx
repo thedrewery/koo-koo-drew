@@ -9,7 +9,7 @@ const NewReview = () => {
     const [body, setBody] = useState("")
     const [rating, setRating] = useState("")
     const [dbRating, setDbRating] = useState("")
-    const [publicReview, setPublicReview] = useState("")
+    const [publicReview, setPublicReview] = useState(true)
 
     const createNewReview = async (e) => {
         e.preventDefault();

@@ -4,13 +4,19 @@ import { useState } from 'react';
 const RATINGS = ["🐔", "🐔🐔", "🐔🐔🐔", "🐔🐔🐔🐔", "🐔🐔🐔🐔🐔"]
 
 const EditReview = () => {
-    const [establishment, setEstablishment] = useState("")
-    const [address, setAddress] = useState("")
-    const [description, setDescription] = useState("")
-    const [body, setBody] = useState("")
+    const editEstablishment = window.localStorage.getItem('editEstablishment')
+    const editAddress = window.localStorage.getItem('editAddress')
+    const editDescription = window.localStorage.getItem('editDescription')
+    const editBody = window.localStorage.getItem('editBody')
+
+    const [establishment, setEstablishment] = useState(editEstablishment)
+    const [address, setAddress] = useState(editAddress)
+    const [description, setDescription] = useState(editDescription)
+    const [body, setBody] = useState(editBody)
     const [rating, setRating] = useState("")
     const [dbRating, setDbRating] = useState("")
     const [publicReview, setPublicReview] = useState("")
+
 
     const editExistingReview = async (e) => {
         e.preventDefault();
@@ -49,7 +55,7 @@ const EditReview = () => {
                         onChange={(e) => setEstablishment(e.target.value)}
                         id="establishment"
                         value={establishment}
-                        //placeholder={this.establishment}
+                        // placeholder={editEstablishment}
                     />
                 </label>
                 <label htmlFor="address">
@@ -58,7 +64,7 @@ const EditReview = () => {
                         onChange={(e) => setAddress(e.target.value)}
                         id="address"
                         value={address}
-                        //placeholder={this.address}
+                        // placeholder={editAddress}
                     />
                 </label>
                 <label htmlFor="description">
@@ -68,7 +74,7 @@ const EditReview = () => {
                         onChange={(e) => setDescription(e.target.value)}
                         id="description"
                         value={description}
-                        //placeholder={this.description}
+                        // placeholder={editDescription}
                         rows="2"
                         cols="40"
                     />
@@ -81,7 +87,7 @@ const EditReview = () => {
                         onChange={(e) => setBody(e.target.value)}
                         id="body"
                         value={body}
-                        //placeholder={this.body}
+                        // placeholder={editBody}
                         rows="7"
                         cols="40"
                     />
@@ -139,7 +145,7 @@ const EditReview = () => {
                     </div>
                 </label>
                 <div className="edit-review">
-                    <button >Submit</button>
+                    <button >Save</button>
                     <button onClick={() => window.location.reload()}>Cancel</button>
                 </div>
             </form>
