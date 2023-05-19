@@ -16,11 +16,7 @@ const Review = (props) => {
                 "Content-Type": "application/json"
             } 
         });
-        if (process.env.NODE_ENV === 'production') {
-            window.location.reload(window.location.href)
-        } else {
-            window.location.reload(window.location.href);
-        }
+        window.location.reload();
     }
 
     const editReview = async () => {
@@ -39,7 +35,6 @@ const Review = (props) => {
                     (
                         <div>   
                             <EditReview />
-                            <button onClick={() => setShowEditReview(false)}>Cancel Edit Review</button>
                         </div>
                     ) : null
             }

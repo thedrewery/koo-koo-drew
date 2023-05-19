@@ -1,5 +1,5 @@
 import { useState } from 'react';
-//import { props } from './Review'
+import { useNavigate } from "react-router-dom";
 
 const RATINGS = ["🐔", "🐔🐔", "🐔🐔🐔", "🐔🐔🐔🐔", "🐔🐔🐔🐔🐔"]
 
@@ -8,6 +8,7 @@ const EditReview = () => {
     const editAddress = window.localStorage.getItem('editAddress')
     const editDescription = window.localStorage.getItem('editDescription')
     const editBody = window.localStorage.getItem('editBody')
+    const navigate = useNavigate()
 
     const [establishment, setEstablishment] = useState(editEstablishment)
     const [address, setAddress] = useState(editAddress)
@@ -42,11 +43,7 @@ const EditReview = () => {
                 })
         });
         await response.json();
-        if (process.env.NODE_ENV === 'production') {
-            window.location.reload(window.location.href)
-        } else {
-            window.location.reload();
-        }
+        navigate("/reviews")
     }
 
     return (
