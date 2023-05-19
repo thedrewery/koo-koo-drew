@@ -22,7 +22,10 @@ const Review = (props) => {
     const editReview = async () => {
         setShowEditReview(true)
         window.localStorage.setItem("editReviewId", props.id)
-        console.log(props.id, "editReview button clicked")
+        window.localStorage.setItem("editEstablishment", props.establishment)
+        window.localStorage.setItem("editAddress", props.address)
+        window.localStorage.setItem("editDescription", props.description)
+        window.localStorage.setItem("editBody", props.body)
     }
 
     return (
