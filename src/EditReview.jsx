@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
 
 const RATINGS = ["🐔", "🐔🐔", "🐔🐔🐔", "🐔🐔🐔🐔", "🐔🐔🐔🐔🐔"]
 
@@ -8,7 +7,6 @@ const EditReview = () => {
     const editAddress = window.localStorage.getItem('editAddress')
     const editDescription = window.localStorage.getItem('editDescription')
     const editBody = window.localStorage.getItem('editBody')
-    const navigate = useNavigate()
 
     const [establishment, setEstablishment] = useState(editEstablishment)
     const [address, setAddress] = useState(editAddress)
@@ -43,7 +41,7 @@ const EditReview = () => {
                 })
         });
         await response.json();
-        navigate("/reviews")
+        window.location.reload();
     }
 
     return (
@@ -147,6 +145,7 @@ const EditReview = () => {
                 </label>
                 <div className="edit-review">
                     <button >Save</button>
+                    <button onClick={() => window.location.reload()}>Cancel</button>
                 </div>
             </form>
         </div>
