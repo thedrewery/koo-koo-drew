@@ -24,7 +24,7 @@ const Login = () => {
         window.localStorage.setItem("token", data.token)
         window.localStorage.setItem("userId", data.userId)
         window.localStorage.setItem("username", data.username)
-        navigate(`/reviews/${data.userId}`);
+        navigate("/reviews");
     };
 
     return (

@@ -42,7 +42,11 @@ const EditReview = () => {
                 })
         });
         await response.json();
-        window.location.reload()
+        if (process.env.NODE_ENV === 'production') {
+            window.location.reload(window.location.href)
+        } else {
+            window.location.reload();
+        }
     }
 
     return (
