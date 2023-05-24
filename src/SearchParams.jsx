@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-//import ReviewsDisplay from "./ReviewsDisplay";
+import ReviewsDisplay from "./ReviewsDisplay";
 const RATINGS = ["🐔", "🐔🐔", "🐔🐔🐔", "🐔🐔🐔🐔", "🐔🐔🐔🐔🐔"]
 
 const SearchParams = () => {
@@ -64,7 +64,7 @@ const SearchParams = () => {
                 </label>
                 <button>Submit</button>
             </form>
-            <Results reviews={reviews} />
+            <ReviewsDisplay reviews={reviews} />
         </div>
     )
 }
