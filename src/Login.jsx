@@ -8,6 +8,7 @@ const Login = () => {
     const navigate = useNavigate()
     
     const loginSubmit = async (e) => {
+        window.localStorage.setItem("username", username)
         setIsLoading(true)
         e.preventDefault();
         const response = await fetch("https://drewery-hot-chicken.onrender.com/signin", {
@@ -23,7 +24,6 @@ const Login = () => {
         const data = await response.json();
         window.localStorage.setItem("token", data.token)
         window.localStorage.setItem("userId", data.userId)
-        window.localStorage.setItem("username", data.username)
         navigate(`/reviews/${data.userId}`);
     };
 

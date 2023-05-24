@@ -9,6 +9,7 @@ const SignUp = () => {
     const navigate = useNavigate() 
 
     const signupSubmit = async (e) => {
+        window.localStorage.setItem("username", newUsername)
         setIsLoading(true)
         e.preventDefault();
         const response = await fetch("https://drewery-hot-chicken.onrender.com/user", {
@@ -23,7 +24,6 @@ const SignUp = () => {
             })
         });
         const data = await response.json();
-        console.log("this is the response data", data)
         window.localStorage.setItem("token", data.token)
         window.localStorage.setItem("userId", data.userId)
         navigate(`../reviews/${data.userId}`)

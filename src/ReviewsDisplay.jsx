@@ -70,7 +70,7 @@ const ReviewsDisplay = () => {
                             description={review.description}
                             body={review.body}
                             rating={RATINGS[review.rating]}
-                            reviewer={review.reviewedById}
+                            reviewer={review.reviewedByUsername}
                             createdAt={new Date(review.createdAt).toLocaleString()}
                             // comments={review.comments}
                             key={review.id}
