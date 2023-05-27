@@ -6,7 +6,6 @@ const Review = (props) => {
     const [showEditReview, setShowEditReview] = useState(false);
     const { id, createdAt, establishment, address, description, body, rating, reviewer } = props
     const username = localStorage.getItem("username")
-    console.log(username)
 
     const deleteReview = async () => {
         const token = localStorage.getItem('token')
